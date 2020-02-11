@@ -26,7 +26,7 @@ public class LevelChanger : MonoBehaviour
     }
     public void ChangeLevel()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
     public void Blink()
     {

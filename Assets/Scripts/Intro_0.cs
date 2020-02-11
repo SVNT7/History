@@ -8,7 +8,7 @@ public class Intro_0 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -16,7 +16,7 @@ public class Intro_0 : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
         }
     }
 }
