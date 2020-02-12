@@ -24,6 +24,7 @@ public class PlayerInterract : MonoBehaviour
             itemTemp = item;
             item.GetComponent<SphereCollider>().isTrigger = false;
             item.transform.parent = bone.transform;
+            item.transform.localScale = new Vector3(0.5f,0.5f,0.5f);
             item.transform.localPosition = new Vector3(0, -0.4f, 0);
             item.transform.localRotation = Quaternion.identity;
             isHolding = true;
@@ -32,6 +33,7 @@ public class PlayerInterract : MonoBehaviour
         {
             itemTemp.GetComponent<Rigidbody>().isKinematic = false;
             itemTemp.GetComponent<SphereCollider>().isTrigger = true;
+            itemTemp.transform.localScale = new Vector3(1f, 1f, 1f);
             itemTemp.transform.parent = null;
             isHolding = false;
         }
