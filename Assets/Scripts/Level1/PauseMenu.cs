@@ -52,6 +52,13 @@ public class PauseMenu : MonoBehaviour
 
     }
 
+    public void BackToGame()
+    {
+        PauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        IsPaused = false;
+        Camera.GetComponent<TurningScript>().enabled = true;
+    }
     public void BackToMenu()
     {
         PauseMenuUI.SetActive(false);

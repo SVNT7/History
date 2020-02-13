@@ -27,7 +27,7 @@ public class CrouchCameraMovement : MonoBehaviour
        
 
         oldCameraPosition = cameraPosition.transform.localPosition;
-        newCameraPositionCrouch = new Vector3(0.1f, 1.1f, 0.900f);
+        newCameraPositionCrouch = new Vector3(0.1f, 3f, -0.900f);
 
         newCameraPositionJump = new Vector3(0.1f, 3f, 0.900f);
 
