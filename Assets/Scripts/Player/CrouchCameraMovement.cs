@@ -6,11 +6,11 @@ public class CrouchCameraMovement : MonoBehaviour
 {
     public Transform cameraPosition;
     private bool crouched;
-    private Vector3 oldCameraPosition;
-    private Vector3 newCameraPositionCrouch;
+    [SerializeField] private Vector3 _oldCameraPosition;
+    [SerializeField] private Vector3 _newCameraPositionCrouch;
     private Vector3 newCameraPositionJump;
-
-    private Vector3 backToOldCameraPosition;
+    
+    [SerializeField]private Vector3 _backToOldCameraPosition;
 
     public float speed = 2f;
     public float delay = 1.5f;
@@ -26,18 +26,18 @@ public class CrouchCameraMovement : MonoBehaviour
 
        
 
-        oldCameraPosition = cameraPosition.transform.localPosition;
-        newCameraPositionCrouch = new Vector3(0.1f, 3f, -0.900f);
-
-        newCameraPositionJump = new Vector3(0.1f, 3f, 0.900f);
-
-        backToOldCameraPosition = new Vector3(0f, 1.718f, 0.525f);
-
+        _oldCameraPosition = cameraPosition.transform.localPosition;
+        // _newCameraPositionCrouch = new Vector3(0.1f, 3f, -0.900f);
+        
+        // newCameraPositionJump = new Vector3(0.1f, 3f, 0.900f);
+        
+        // backToOldCameraPosition = new Vector3(0f, 1.718f, 0.525f);
+        
         if (Input.GetKey(KeyCode.LeftControl)){
-            transform.localPosition = Vector3.Lerp(oldCameraPosition, newCameraPositionCrouch, speed * Time.deltaTime);
+            transform.localPosition = Vector3.Lerp(_oldCameraPosition, _newCameraPositionCrouch, speed * Time.deltaTime);
         }
         if (Input.GetKeyUp(KeyCode.LeftControl)){
-            transform.localPosition = Vector3.Lerp(backToOldCameraPosition, newCameraPositionCrouch, speed * Time.deltaTime);
+            transform.localPosition = Vector3.Lerp(_backToOldCameraPosition, _newCameraPositionCrouch, speed * Time.deltaTime);
         }
 
     }

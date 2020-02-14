@@ -2609,6 +2609,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraPosition: {fileID: 828633828}
+  _oldCameraPosition: {x: 0.1, y: 1.718, z: 0.9}
+  _newCameraPositionCrouch: {x: 0.1, y: 3, z: 0.9}
+  _backToOldCameraPosition: {x: 0, y: 1.718, z: 0.525}
   speed: 10
   delay: 1.5
 --- !u!114 &828633831
@@ -4686,7 +4689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 1290463352}
   animacje: {fileID: 0}
-  speed: 5
+  _speed: 12
   jumpHeight: 5
   move: {x: 0, y: 0, z: 0}
   gravity: 20

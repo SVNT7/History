@@ -18,10 +18,11 @@ public class FootstepSound : MonoBehaviour
     [HideInInspector]
     public float stepDistance;
 
+    // serialize i zmiana na private
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
 
         footstepSound = GetComponent<AudioSource>();

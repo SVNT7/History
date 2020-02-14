@@ -9,16 +9,14 @@ public class PlayerInterract : MonoBehaviour
     public Collider itemTemp;
     public Transform bone;
     private bool isHolding = false;
-    void Start()
-    {
-        
-    }
+
+    // vectory w zmienne
 
     void Update()
     {
-
-
-        if (Input.GetKeyDown(KeyCode.E) && isHolding == false)
+         
+        
+        if (Input.GetKey(KeyCode.E) && isHolding == false)
         {
             item.GetComponent<Rigidbody>().isKinematic = true;
             itemTemp = item;
@@ -27,15 +25,18 @@ public class PlayerInterract : MonoBehaviour
             item.transform.localScale = new Vector3(0.5f,0.5f,0.5f);
             item.transform.localPosition = new Vector3(0, -0.4f, 0);
             item.transform.localRotation = Quaternion.identity;
-            isHolding = true;
+            StartCoroutine(PickupDelay(true));
+            //isHolding = true;
         }
-        if (Input.GetKeyDown(KeyCode.G) && isHolding == true)
+        else if (Input.GetKey(KeyCode.E) && isHolding == true)
         {
             itemTemp.GetComponent<Rigidbody>().isKinematic = false;
             itemTemp.GetComponent<SphereCollider>().isTrigger = true;
             itemTemp.transform.localScale = new Vector3(1f, 1f, 1f);
             itemTemp.transform.parent = null;
-            isHolding = false;
+            StartCoroutine(PickupDelay(false));
+            //isHolding = false;
+
         }
     }
 
@@ -50,8 +51,10 @@ public class PlayerInterract : MonoBehaviour
         item = null;
     }
 
-    IEnumerator Hold()
+    IEnumerator PickupDelay(bool p_isHolding)
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(0.5f);
+        isHolding = p_isHolding; 
     }
+
 }

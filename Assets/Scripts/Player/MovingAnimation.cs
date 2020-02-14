@@ -9,7 +9,9 @@ public class MovingAnimation : MonoBehaviour
     public bool isCrouching;
     public bool isWalking;
 
-    public float maxSpeed = 10;
+    public float maxSpeed = 10f;
+
+    // stringi do zmiennych
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +30,7 @@ public class MovingAnimation : MonoBehaviour
         {
             animator.SetBool("isWalking", false);
         }
-
+        
 
         if (Input.GetKey(KeyCode.LeftControl))
         {

@@ -11,12 +11,11 @@ public class MovementScript : MonoBehaviour
     public Animator animacje;
 
 
-    public float speed = 12f;
+    [SerializeField] private float _speed = 12f;
     public float jumpHeight = 3f;
     private float verticalVelocity;
 
-    Vector3 moveDirection;
-    Vector3 velocity;
+    private Vector3 moveDirection;
     public Vector3 move;
     public float gravity = 20f;
 
@@ -28,7 +27,7 @@ public class MovementScript : MonoBehaviour
      
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         controller = GetComponent<CharacterController>();
     }
@@ -45,7 +44,7 @@ public class MovementScript : MonoBehaviour
         moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
 
         moveDirection = transform.TransformDirection(moveDirection);
-        moveDirection *= speed * Time.deltaTime;
+        moveDirection *= _speed * Time.deltaTime;
 
         ApplyGravity();
 
@@ -72,5 +71,14 @@ public class MovementScript : MonoBehaviour
         {
             verticalVelocity = jumpHeight;
         }
+    }
+    public float GetSpeed()
+    {
+        
+        return _speed;
+    }
+    public void SetSpeed(float p_speed)
+    {
+        _speed = p_speed;
     }
 }
