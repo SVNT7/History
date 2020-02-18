@@ -6,28 +6,22 @@ public class FootstepSound : MonoBehaviour
 {
 
     private AudioSource footstepSound;
+    [SerializeField] private AudioClip[] _footstepClip;   
 
-    [SerializeField]
-    private AudioClip[] footstepClip;   
-
-    private CharacterController controller;
-    public float volumeMin, volumeMax;
+    [SerializeField] private CharacterController _controller;
+    [SerializeField] private float _volumeMin, _volumeMax;
 
     private float accumulatedDistance;
-
-    [HideInInspector]
-    public float stepDistance;
-
+    [SerializeField] private float _stepDistance;
+    
     // serialize i zmiana na private
 
 
     // Start is called before the first frame update
     void Awake()
     {
-
         footstepSound = GetComponent<AudioSource>();
-        controller = GetComponentInParent<CharacterController>();
-
+        _controller = GetComponentInParent<CharacterController>();
     }
 
     // Update is called once per frame
@@ -38,26 +32,49 @@ public class FootstepSound : MonoBehaviour
 
     void PlayFootstepSound()
     {
-        if (!controller.isGrounded)
+        // jesli w powietrzu, nie wydawaj dzwieku
+        if (!_controller.isGrounded)
         {
             return;
         }
-        if(controller.velocity.sqrMagnitude > 0)
+
+        // jesli sie porusza, wydaj dzwiek
+        if(_controller.velocity.sqrMagnitude > 0)
         {
             accumulatedDistance += Time.deltaTime;
 
-            if(accumulatedDistance > stepDistance)
+            if(accumulatedDistance > _stepDistance)
             {
-                footstepSound.volume = Random.Range(volumeMin, volumeMax);
-                footstepSound.clip = footstepClip[Random.Range(0, footstepClip.Length)];
+                footstepSound.volume = Random.Range(_volumeMin, _volumeMax);
+                footstepSound.clip = _footstepClip[Random.Range(0, _footstepClip.Length)];
                 footstepSound.Play();
 
                 accumulatedDistance = 0f;
             }
         }
-        else
+        else // jesli sie nie porusza, przestan wydawac dzwiek i zresetuj distance
         {
             accumulatedDistance = 0f;
         }
+    }
+
+    public float ReturnVolumeMin()
+    {
+        return _volumeMin;
+    }
+
+    public float ReturnVolumeMax()
+    {
+        return _volumeMax;
+    }
+
+
+
+
+    public void SetVolumeOptions(float p_stepDistance, float p_volumeMin, float p_volumeMax)
+    {
+        _stepDistance = p_stepDistance;
+        _volumeMin = p_volumeMin;
+        _volumeMax = p_volumeMax;
     }
 }

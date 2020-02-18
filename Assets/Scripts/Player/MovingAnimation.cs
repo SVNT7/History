@@ -4,80 +4,82 @@ using UnityEngine;
 
 public class MovingAnimation : MonoBehaviour
 {
-    public Animator animator;
-    public CharacterController controller;
-    public bool isCrouching;
-    public bool isWalking;
+    [SerializeField] private Animator _animator;
+    [SerializeField] private CharacterController _controller;
 
-    public float maxSpeed = 10f;
+    /*[SerializeField] private bool isCrouching;
+    [SerializeField] private bool isWalking;*/
+
+    private string isWalking = "isWalking";
+    private string isCrouching = "isCrouching";
+    private string isRunning = "isRunning";
+    private string isJumping = "isJumping";
+
+    [SerializeField] private float maxSpeed = 10f;
 
     // stringi do zmiennych
 
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        // poruszanie sie
         if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
         {
-            animator.SetBool("isWalking", true);
+            _animator.SetBool(isWalking, true);
         }
         if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
         {
-            animator.SetBool("isWalking", false);
+            _animator.SetBool(isWalking, false);
         }
         
-
+        // kucanie
         if (Input.GetKey(KeyCode.LeftControl))
         {
-            animator.SetBool("isCrouching", true);
+            _animator.SetBool(isCrouching, true);
         }
         if (Input.GetKeyUp(KeyCode.LeftControl))
         {
-            animator.SetBool("isCrouching", false);
+            _animator.SetBool(isCrouching, false);
         }
 
+        // sprint
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            animator.SetBool("isRunning", true);
+            _animator.SetBool(isRunning, true);
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            animator.SetBool("isRunning", false);
+            _animator.SetBool(isRunning, false);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && controller.isGrounded)
+        // skok
+        if (Input.GetKeyDown(KeyCode.Space) && _controller.isGrounded)
         {
-            animator.SetBool("isJumping", true);
+            _animator.SetBool(isJumping, true);
         }
-        if(animator.GetCurrentAnimatorStateInfo(0).IsName("Jump"))
+        if(_animator.GetCurrentAnimatorStateInfo(0).IsName("Jump"))
         {
-            animator.SetBool("isJumping", false);
+            _animator.SetBool(isJumping, false);
         }
-
-
-
-
-
-
-
 
         var x = Input.GetAxis("Horizontal");
         var y = Input.GetAxis("Vertical");
 
-        animator.SetFloat("VelX", x);
-        animator.SetFloat("VelY", y);
+        _animator.SetFloat("VelX", x);
+        _animator.SetFloat("VelY", y);
 
-        if (Input.GetKeyDown(KeyCode.LeftControl)){
+        /*if (Input.GetKeyDown(KeyCode.LeftControl)){
             isCrouching = true;
         }
         if (Input.GetKeyUp(KeyCode.LeftControl)){
             isCrouching = false;
-        }
+        }*/
 
     }
 }

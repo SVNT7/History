@@ -7,14 +7,11 @@ public class LevelChanger : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public Animator animator;
-    public GameObject Obrazek;
+    [SerializeField] private Animator _animator; // animator - Obrazek, skrypt na MainCamera
+   //[SerializeField] private GameObject _obrazek;
 
 
-    void Start()
-    {
-        animator = Obrazek.GetComponent<Animator>();
-    }
+
     // Update is called once per frame
     void Update()
     {
@@ -22,7 +19,7 @@ public class LevelChanger : MonoBehaviour
     }
     void setTrigger()
     {
-        animator.SetTrigger("FadeOut");
+        _animator.SetTrigger("FadeOut");
     }
     public void ChangeLevel()
     {
@@ -30,10 +27,10 @@ public class LevelChanger : MonoBehaviour
     }
     public void Blink()
     {
-        animator.SetTrigger("FadeInOut");
+        _animator.SetTrigger("FadeInOut");
     }
     public void BlinkReset()
     {
-        animator.ResetTrigger("FadeInOut");
+        _animator.ResetTrigger("FadeInOut");
     }
 }

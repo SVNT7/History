@@ -34,9 +34,6 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
-
-
         Camera.GetComponent<TurningScript>().enabled = true;
     }
 

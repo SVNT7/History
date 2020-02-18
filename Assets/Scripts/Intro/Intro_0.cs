@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Intro_0 : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Cursor.visible = false;
     }

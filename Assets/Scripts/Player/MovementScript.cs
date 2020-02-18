@@ -6,36 +6,33 @@ public class MovementScript : MonoBehaviour
 {
 
 
-    public CharacterController controller;
+    [SerializeField] private CharacterController _controller;
 
-    public Animator animacje;
+    //public Animator animacje;
 
 
-    [SerializeField] private float _speed = 12f;
-    public float jumpHeight = 3f;
+    [SerializeField] private float _speed = 5f;
+    [SerializeField] private float _jumpHeight = 3f;
+
     private float verticalVelocity;
-
     private Vector3 moveDirection;
-    public Vector3 move;
-    public float gravity = 20f;
+    //public Vector3 move;
+    [SerializeField] private float _gravity = 20f;
 
     /*public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
     bool isGrounded; */
 
-     
-
     // Start is called before the first frame update
     void Awake()
     {
-        controller = GetComponent<CharacterController>();
+        _controller = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
         MovePlayer();
     }
 
@@ -48,37 +45,36 @@ public class MovementScript : MonoBehaviour
 
         ApplyGravity();
 
-        controller.Move(moveDirection);
+        _controller.Move(moveDirection);
     }
 
     void ApplyGravity()
     {
-        if (controller.isGrounded)
+        if (_controller.isGrounded)
         {
-            verticalVelocity -= gravity * Time.deltaTime;
+            verticalVelocity -= _gravity * Time.deltaTime;
             PlayerJump();
         }
         else
         {
-            verticalVelocity -= gravity * Time.deltaTime;
+            verticalVelocity -= _gravity * Time.deltaTime;
         }
         moveDirection.y = verticalVelocity * Time.deltaTime;
     }
 
     void PlayerJump()
     {
-        if(controller.isGrounded && Input.GetKey(KeyCode.Space))
+        if(_controller.isGrounded && Input.GetKey(KeyCode.Space))
         {
-            verticalVelocity = jumpHeight;
+            verticalVelocity = _jumpHeight;
         }
     }
     public float GetSpeed()
-    {
-        
-        return _speed;
+    {      
+        return _speed; // pobierz _speed
     }
     public void SetSpeed(float p_speed)
     {
-        _speed = p_speed;
+        _speed = p_speed; // zwroc _speed do CrouchSprint
     }
 }

@@ -2608,12 +2608,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cef649b0738d7647bba1b05a623d5ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraPosition: {fileID: 828633828}
-  _oldCameraPosition: {x: 0.1, y: 1.718, z: 0.9}
-  _newCameraPositionCrouch: {x: 0.1, y: 3, z: 0.9}
-  _backToOldCameraPosition: {x: 0, y: 1.718, z: 0.525}
-  speed: 10
-  delay: 1.5
+  _cameraPosition: {fileID: 828633828}
+  _actualCameraPosition: {x: 0, y: 0, z: 0}
+  _crouchCameraPosition: {x: 0, y: 3, z: -2}
+  _jumpCameraPosition: {x: 0, y: 0, z: 0}
+  _defaultCameraPosition: {x: 0, y: 1.718, z: 0.525}
+  _defaultCrouchCameraPosition: {x: 0, y: 0, z: 0}
+  _speed: 2
 --- !u!114 &828633831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4689,7 +4690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 1290463352}
   animacje: {fileID: 0}
-  _speed: 12
+  _speed: 5
   jumpHeight: 5
   move: {x: 0, y: 0, z: 0}
   gravity: 20
@@ -4816,10 +4817,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38d8668cea1912b4681d5320534d20cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  item: {fileID: 0}
-  itemTemp: {fileID: 0}
-  bone: {fileID: 1124696622}
+  _item: {fileID: 0}
+  _itemTemp: {fileID: 0}
+  _bone: {fileID: 1124696622}
 --- !u!1001 &1306572668
 PrefabInstance:
   m_ObjectHideFlags: 0

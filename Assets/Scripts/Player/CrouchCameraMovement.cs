@@ -4,40 +4,40 @@ using UnityEngine;
 
 public class CrouchCameraMovement : MonoBehaviour
 {
-    public Transform cameraPosition;
-    private bool crouched;
-    [SerializeField] private Vector3 _oldCameraPosition;
-    [SerializeField] private Vector3 _newCameraPositionCrouch;
-    private Vector3 newCameraPositionJump;
+    [SerializeField] private Transform _cameraPosition;
+    //private bool crouched;
+    [SerializeField] private Vector3 _actualCameraPosition;
+    [SerializeField] private Vector3 _crouchCameraPosition;
+    //[SerializeField] private Vector3 _jumpCameraPosition; // TODO: w razie zmiany kamery
     
-    [SerializeField]private Vector3 _backToOldCameraPosition;
+    [SerializeField]private Vector3 _defaultCameraPosition;
+    //[SerializeField] private Vector3 _defaultCrouchCameraPosition;
 
-    public float speed = 2f;
-    public float delay = 1.5f;
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private float _speed = 0.1f;
+    //public float delay = 1.5f;
+
+    void Awake()
     {
-        
-    }
+        _actualCameraPosition = _cameraPosition.transform.localPosition;
 
+    }
     // Update is called once per frame
     void Update()
     {
-
-       
-
-        _oldCameraPosition = cameraPosition.transform.localPosition;
         // _newCameraPositionCrouch = new Vector3(0.1f, 3f, -0.900f);
-        
+
         // newCameraPositionJump = new Vector3(0.1f, 3f, 0.900f);
-        
+
         // backToOldCameraPosition = new Vector3(0f, 1.718f, 0.525f);
-        
+
+        _actualCameraPosition = _cameraPosition.transform.localPosition;
+
+
         if (Input.GetKey(KeyCode.LeftControl)){
-            transform.localPosition = Vector3.Lerp(_oldCameraPosition, _newCameraPositionCrouch, speed * Time.deltaTime);
+            transform.localPosition = Vector3.Lerp(_actualCameraPosition, _crouchCameraPosition, _speed * Time.deltaTime);
         }
-        if (Input.GetKeyUp(KeyCode.LeftControl)){
-            transform.localPosition = Vector3.Lerp(_backToOldCameraPosition, _newCameraPositionCrouch, speed * Time.deltaTime);
+        else {
+            transform.localPosition = Vector3.Lerp(_actualCameraPosition, _defaultCameraPosition, _speed * Time.deltaTime);
         }
 
     }

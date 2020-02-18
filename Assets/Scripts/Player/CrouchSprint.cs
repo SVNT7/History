@@ -6,23 +6,26 @@ public class CrouchSprint : MonoBehaviour
 {
     private MovementScript speed; // pobierz speed z MovementScript
 
-    public float sprintSpeed = 10f;
-    public float moveSpeed = 5f;
+    [SerializeField] private float sprintSpeed = 10f;
+    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float crouchSpeed = 2f;
 
-    public float crouchSpeed = 2f;
-    private Transform changeCameraPosition;
-    private float standingHeight = 1.718f;
-    private float crouchHeight = 1f;
+    //private Transform changeCameraPosition;
+    //private float standingHeight = 1.718f;
+    //private float crouchHeight = 1f;
 
     private bool isCrouching;
     private FootstepSound footstepSound;
+
     private float sprintVolume = 1f;
     private float crouchVolume = 0.1f;
-    private float walkVolumeMin = 0.2f, walkVolumeMax = 0.6f;
 
-    private float walkStepDistance = 0.55f;
-    private float sprintStepDistance = 0.35f;
-    private float crouchStepDistance = 0.5f;
+    [SerializeField] private float walkVolumeMin = 0.2f, walkVolumeMax = 0.6f;
+
+    // co jaki odstep wydac dzwiek  
+    [SerializeField] private float walkStepDistance = 0.55f;
+    [SerializeField] private float sprintStepDistance = 0.35f;
+    [SerializeField] private float crouchStepDistance = 0.5f;
 
 
 
@@ -32,13 +35,13 @@ public class CrouchSprint : MonoBehaviour
     void Start()
     {
         speed = transform.GetComponent<MovementScript>();
-        changeCameraPosition = transform.GetChild(0);
-
+        //changeCameraPosition = transform.GetChild(0);
         footstepSound = GetComponentInChildren<FootstepSound>();
+        footstepSound.SetVolumeOptions(walkStepDistance,walkVolumeMin, walkVolumeMax);
 
-        footstepSound.volumeMin = walkVolumeMin;
-        footstepSound.volumeMax = walkVolumeMax;
-        footstepSound.stepDistance = walkStepDistance;
+        /*footstepSound._volumeMin = walkVolumeMin;
+        footstepSound._volumeMax = walkVolumeMax;
+        footstepSound.stepDistance = walkStepDistance;*/
 
     }
 
@@ -54,18 +57,12 @@ public class CrouchSprint : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.LeftShift) && !isCrouching)
         {
             speed.SetSpeed(sprintSpeed); // kapsulacja / enkapsulacja
-            footstepSound.stepDistance = sprintStepDistance;
-            footstepSound.volumeMin = sprintVolume;
-            footstepSound.volumeMax = sprintVolume;
-            
+            SetSoundVolume(sprintStepDistance, sprintVolume, sprintVolume);
         }
         if (Input.GetKeyUp(KeyCode.LeftShift) && !isCrouching)
         {
             speed.SetSpeed(moveSpeed);
-
-            footstepSound.stepDistance = walkStepDistance;
-            footstepSound.volumeMin = walkVolumeMin;
-            footstepSound.volumeMax = walkVolumeMax;
+            SetSoundVolume(walkStepDistance, walkVolumeMin, walkVolumeMax);
         }
     }
     void Crouch()
@@ -73,9 +70,7 @@ public class CrouchSprint : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             speed.SetSpeed(crouchSpeed);
-            footstepSound.stepDistance = crouchStepDistance;
-            footstepSound.volumeMin = crouchVolume;
-            footstepSound.volumeMax = crouchVolume;
+            SetSoundVolume(crouchStepDistance, crouchVolume, crouchVolume);
 
             isCrouching = true;
 
@@ -83,12 +78,14 @@ public class CrouchSprint : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.LeftControl))
         {
             speed.SetSpeed(moveSpeed);
-
-            footstepSound.stepDistance = walkStepDistance;
-            footstepSound.volumeMin = walkVolumeMin;
-            footstepSound.volumeMax = walkVolumeMax;
+            SetSoundVolume(walkStepDistance, walkVolumeMin, walkVolumeMax);
 
             isCrouching = false;
         }
+    }
+
+    void SetSoundVolume(float p_stepDistance, float p_volumeMin, float p_volumeMax)
+    {
+        footstepSound.SetVolumeOptions(p_stepDistance, p_volumeMin, p_volumeMax);
     }
 }
