@@ -68,9 +68,6 @@ public class FootstepSound : MonoBehaviour
         return _volumeMax;
     }
 
-
-
-
     public void SetVolumeOptions(float p_stepDistance, float p_volumeMin, float p_volumeMax)
     {
         _stepDistance = p_stepDistance;
