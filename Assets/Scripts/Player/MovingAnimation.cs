@@ -15,7 +15,7 @@ public class MovingAnimation : MonoBehaviour
     private string isRunning = "isRunning";
     private string isJumping = "isJumping";
 
-    [SerializeField] private float maxSpeed = 10f;
+    //[SerializeField] private float maxSpeed = 10f;
 
     // stringi do zmiennych
 

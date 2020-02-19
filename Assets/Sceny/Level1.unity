@@ -2594,8 +2594,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feb876f626792c643a5e28ba8d92c87e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSens: 100
-  player: {fileID: 1290463351}
+  _mouseSens: 100
+  _player: {fileID: 828633828}
 --- !u!114 &828633830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2611,9 +2611,7 @@ MonoBehaviour:
   _cameraPosition: {fileID: 828633828}
   _actualCameraPosition: {x: 0, y: 0, z: 0}
   _crouchCameraPosition: {x: 0, y: 3, z: -2}
-  _jumpCameraPosition: {x: 0, y: 0, z: 0}
   _defaultCameraPosition: {x: 0, y: 1.718, z: 0.525}
-  _defaultCrouchCameraPosition: {x: 0, y: 0, z: 0}
   _speed: 2
 --- !u!114 &828633831
 MonoBehaviour:
@@ -3181,10 +3179,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddbced813aa764c4d8e0de265313a4af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  controller: {fileID: 1290463352}
-  isCrouching: 0
-  isWalking: 0
+  _animator: {fileID: 0}
+  _controller: {fileID: 0}
   maxSpeed: 10
 --- !u!1001 &1026242855
 PrefabInstance:
@@ -4630,7 +4626,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1290463350}
   m_LocalRotation: {x: -0, y: 0.9784676, z: -0, w: 0.2064008}
-  m_LocalPosition: {x: 147.25, y: 65.77, z: 258.45}
+  m_LocalPosition: {x: 150.45, y: 65.77, z: 251.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 828633828}
@@ -4669,13 +4665,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d67ee7aa43d896345bebf46db9ecd4ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  footstepClip:
-  - {fileID: 8300000, guid: 5c0decb2da1776248b2f60495d9d94ed, type: 3}
-  - {fileID: 8300000, guid: 3c49a3bf3607b1540a339d4134ebd7b8, type: 3}
-  - {fileID: 8300000, guid: 2ab4c1a3b5cf47c44bcb060ef0a25ceb, type: 3}
-  volumeMin: 0
-  volumeMax: 0
-  stepDistance: 0
+  _footstepClip:
+  - {fileID: 8300000, guid: 95b2a5a5cf7293b459ed9f7b70358ebb, type: 3}
+  - {fileID: 8300000, guid: 207fbca36c5967245bb0a47fd5ec0fab, type: 3}
+  - {fileID: 8300000, guid: fb7f3da4d01c2f64abfd97fa31d4e6ee, type: 3}
+  _controller: {fileID: 1290463352}
+  _volumeMin: 0
+  _volumeMax: 0
+  _stepDistance: 0
 --- !u!114 &1290463354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4688,12 +4685,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a2cd4246664a6142b7121af33e0e674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 1290463352}
-  animacje: {fileID: 0}
+  _controller: {fileID: 0}
   _speed: 5
-  jumpHeight: 5
-  move: {x: 0, y: 0, z: 0}
-  gravity: 20
+  _jumpHeight: 3
+  _gravity: 20
 --- !u!114 &1290463355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4709,6 +4704,11 @@ MonoBehaviour:
   sprintSpeed: 10
   moveSpeed: 5
   crouchSpeed: 2
+  walkVolumeMin: 0.2
+  walkVolumeMax: 0.6
+  walkStepDistance: 0.55
+  sprintStepDistance: 0.35
+  crouchStepDistance: 0.5
 --- !u!82 &1290463356
 AudioSource:
   m_ObjectHideFlags: 0
