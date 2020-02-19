@@ -1,0 +1,26 @@
+Book of the Dead - Standard Shader Conversion & Alternate Textures
+
+Thanks for getting this package!  The original Book of the Dead is such an amazing demo, I was really bummed when I found out it wasn't available for the standard shader!
+
+However, I took the time (and a LOT of it!), to get it mostly working in the standard shader.  It's not perfect, but it comes close.  
+
+In the process, I also created new textures using Substance Painter.  You can use the original textures, or the alternate textures that I've created.  If you'd like to get the source Painter files, you can do so by registering your purchase at my site, www.InfinityPBR.com -- once you register the purchase, the source files will be available in the "Downloads" page.
+
+This package is pretty much final -- there isn't much more I can do with it, but I really hope it helps you make some amazing games!!
+
+The shaders I made were a requirement to get the art working properly.  They were produced with Amplify Shader Editor, so you're welcoem to modify and learn from them :D
+
+Thanks!
+
+IMPORTANT: The original Book of the Dead files (in the "Orignal Files" folder), are from the Book of the Dead package, which you can get on the Asset Store.  I'm including them here because most of the files in that package should not be installed into your project -- Book of the Dead is a stand-alone demo.
+
+Specifically, this package adds this content:
+
+* Custom shaders made in Amplify Shader Editor
+* Original materials set to use the custom shaders
+* .spp Substance Painter files (Available as a free additional download after registering on infinityPBR.com)
+* New textures for most of the objects, exported into the project from the .spp files
+* Prefabs containing these new aspects set up for you, so you can more quickly start using the assets in your project
+* A new "Overlay" scene, showcasing the new textures
+
+For the sake of efficiency and organization, the new materials which are able to share textures with the originals (like the normal map or metal/rough [mask map]) do so.
