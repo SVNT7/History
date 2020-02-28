@@ -4,15 +4,16 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: SurrealGrassDefaultMat
-  m_Shader: {fileID: 4800000, guid: a559d5bf1195b0246b54979d262ff848, type: 3}
+  m_Shader: {fileID: 10606, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2450
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -127,9 +128,12 @@ Material:
     - _RootAO: 0.185
     - _RootTintSpread: 0.708
     - _RootTintStart: 0.143
+    - _ShadowStrength: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
+    - _SquashAmount: 1
     - _SrcBlend: 1
+    - _TranslucencyViewDependency: 0.7
     - _UVSec: 0
     - _Weight1: 1
     - _Weight2: 0.157
@@ -147,3 +151,6 @@ Material:
     - _Tint1: {r: 1, g: 1, b: 1, a: 1}
     - _Tint2: {r: 0.77222514, g: 0.8867924, b: 0.7654859, a: 1}
     - _Tint3: {r: 0.7314584, g: 0.8679245, b: 0.72463506, a: 1}
+    - _TranslucencyColor: {r: 0.73, g: 0.85, b: 0.40999997, a: 1}
+    - _TreeInstanceColor: {r: 1, g: 1, b: 1, a: 1}
+    - _TreeInstanceScale: {r: 1, g: 1, b: 1, a: 1}
