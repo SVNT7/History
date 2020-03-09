@@ -13,6 +13,9 @@ public class probagithub : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        /*kulas ciagnie druta xd*/
+        /*kulas ciagnie druta xd*/
+        /*kulas ciagnie druta xd*/
+        /*kulas ciagnie druta xd*/
     }
 }
