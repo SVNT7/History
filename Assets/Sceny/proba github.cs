@@ -16,6 +16,7 @@ public class probagithub : MonoBehaviour
         /*kulas ciagnie druta xd*/
         /*kulas ciagnie druta xd*/
         /*kulas ciagnie druta xd*/
-        /*kulas ciagnie druta xd*/
+        /*kulas ciagnie druta xd123*/
+        /*123*/
     }
 }
