@@ -503,8 +503,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 356040499}
-  m_LocalRotation: {x: -0.03495075, y: 0.27102917, z: 0.0040897257, w: 0.9619277}
-  m_LocalPosition: {x: 190.3, y: 20.9, z: -55.4}
+  m_LocalRotation: {x: 0.028910287, y: 0.30860335, z: 0.01928094, w: 0.95055586}
+  m_LocalPosition: {x: 113.8, y: 5.9, z: -78.2}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 2047442121}
@@ -512,7 +512,7 @@ Transform:
   - {fileID: 497429157}
   m_Father: {fileID: 0}
   m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: -3.9830003, y: 31.493002, z: -0.63600004}
+  m_LocalEulerAnglesHint: {x: 2.4680002, y: 36.04, z: 3.127}
 --- !u!1 &444122998
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,7 +856,7 @@ GameObject:
   - component: {fileID: 913966931}
   - component: {fileID: 913966930}
   m_Layer: 0
-  m_Name: kamienie jaskinia (1)
+  m_Name: wyjscie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -929,8 +929,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 913966929}
   m_LocalRotation: {x: -0, y: 0.9571771, z: -0, w: 0.2895032}
-  m_LocalPosition: {x: 203.9, y: -4.3, z: -18.7}
-  m_LocalScale: {x: 150, y: 50, z: 40}
+  m_LocalPosition: {x: 186.5, y: -4.3, z: -30.3}
+  m_LocalScale: {x: 100, y: 50, z: 40}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
@@ -946,6 +946,7 @@ GameObject:
   - component: {fileID: 994487317}
   - component: {fileID: 994487316}
   - component: {fileID: 994487315}
+  - component: {fileID: 994487318}
   m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
@@ -962,7 +963,7 @@ BoxCollider:
   m_GameObject: {fileID: 994487314}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -981,13 +982,25 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 994487314}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 119.4, y: 18.2, z: 62.5}
-  m_LocalScale: {x: 10, y: 40, z: 100}
+  m_LocalRotation: {x: 0, y: 0.92387956, z: 0, w: 0.38268343}
+  m_LocalPosition: {x: 175.2, y: 3.3, z: -13.4}
+  m_LocalScale: {x: 10, y: 40, z: 20}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 135, z: 0}
+--- !u!114 &994487318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994487314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa127f5c3b57af14683d4194492c516e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1025484407
 GameObject:
   m_ObjectHideFlags: 0
@@ -1546,6 +1559,98 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &1950713790
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1950713794}
+  - component: {fileID: 1950713793}
+  - component: {fileID: 1950713792}
+  - component: {fileID: 1950713791}
+  m_Layer: 0
+  m_Name: CzlowiekJaskinia
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1950713791
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950713790}
+  m_Material: {fileID: 13400000, guid: 7509f6c6d640a774f9dfaa8af8658a80, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1950713792
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950713790}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: ce4b77858ec6c0f469b07b034c21a85f, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1950713793
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950713790}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1950713794
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950713790}
+  m_LocalRotation: {x: 0, y: -0.28133664, z: 0, w: 0.9596092}
+  m_LocalPosition: {x: 169.8, y: 8, z: 28.2}
+  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: -32.68, z: 0}
 --- !u!1 &2030987055
 GameObject:
   m_ObjectHideFlags: 0
